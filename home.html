@@ -1,0 +1,1383 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta property="og:image" content="https://youvivid-jp-s3-uploads7cdn.youvivid.com/invite_cimage/b669714-665CD9E979EEFD1C6E75008FB6865CCACNVT49050.104.jpg" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=320, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <title>Magesh &amp; Nandhini's Wedding</title>
+    <meta name="description" content="2017/04/09 undefined undefined, Nandhini&amp;Magesh" />
+
+
+    <script src="js/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.18.full.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+
+    <script type="text/javascript">
+
+
+        function RefreshImage(valImageId) {
+            var objImage = document.getElementById(valImageId)
+            if (objImage == undefined) {
+                return;
+            }
+            var now = new Date();
+            objImage.src = objImage.src.split('?')[0] + '?x=' + now.toUTCString();
+        }
+
+
+
+        var instanceClose;
+        function addWinOnloadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+                }
+            }
+        }
+
+    </script>
+
+    <link class="customcss" href="css/custom4.css" rel="stylesheet" type="text/css" />
+    <link class="themecss" href="css/custom2.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/animate.min.css">
+
+
+    <script type="text/javascript">
+
+
+
+
+
+        var invite_styletype = 0;
+
+        function processButtonBackground() {
+
+            if (invite_styletype == 1) {
+                $("h3:visible>.button").each(function (index) {
+                    //$('#detail' + $(this).attr('id').split('button')[1]).attr('id', 'detail' + (index + 1) );			
+                    $(this).attr('id', 'button' + (index + 1));
+                });
+
+                $("h3:visible+div>.detail").each(function (index) {
+                    $(this).attr('id', 'detail' + (index + 1))
+                });
+
+            }
+        }
+
+        function initProcessButtonBackground() {
+            debugger
+            if (invite_styletype == 1) {
+                $("h3:visible>.button").each(function (index) {
+                    $(this).attr('id', 'button' + (index + 1))
+                });
+                $("h3:visible+div>.detail").each(function (index) {
+                    $(this).attr('id', 'detail' + (index + 1))
+                });
+            } else {
+                $("h3>.button").each(function (index) {
+                    $(this).attr('id', $(this).attr('name'))
+                });
+                $("h3+div>.detail").each(function (index) {
+                    $(this).attr('id', $(this).attr('name'))
+                });
+            }
+
+
+        }
+
+
+        var oldFunc;
+        var mapCallBackFunc = function () { };
+
+
+
+
+        var dragFlag7106947 = false;
+        var start7106947 = 0, end7106947 = 0;
+
+        function thisTouchStart7106947(e) {
+            dragFlag7106947 = true;
+            start7106947 = e.touches[0].pageY;
+        }
+
+        function thisTouchEnd7106947() {
+            dragFlag7106947 = false;
+        }
+
+        function thisTouchMove7106947(e) {
+            if (!dragFlag7106947) return;
+            end7106947 = e.touches[0].pageY;
+            window.scrollBy(0, (start7106947 - end7106947));
+        }
+
+
+
+
+        var map7106947 = null;
+        var marker7106947;
+        var map7106947_zoom = 16;
+        var map7106947_latcenter = 51.49958105481696;
+        var map7106947_lngcenter = -0.12786670422973767;
+        var map7106947_latmarker = 51.49959441265267;
+        var map7106947_lngmarker = -0.1279310772461031;
+
+
+        function initialize7106947() {
+            //alert('initialize7106947');
+            if (typeof google === 'undefined') {
+                // return 
+                return false;
+            };
+
+            var myOptions = {
+                zoom: 16,
+                center: new google.maps.LatLng(map7106947_latcenter, map7106947_lngcenter),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                streetViewControl: false,
+                //draggable: false,
+                //gestureHandling: 'cooperative',
+                //fullscreenControl: true,
+                mapTypeControlOptions: {
+                    position: google.maps.ControlPosition.BOTTOM_RIGHT
+                }
+            }
+            map7106947 = new google.maps.Map(document.getElementById("map_canvas7106947"),
+                                          myOptions);
+
+            var image = new google.maps.MarkerImage('//cloudfront.youvivid.com/images/mobile_invite/map_marker.png',
+             // This marker is 20 pixels wide by 32 pixels tall.
+             new google.maps.Size(34, 34),
+             // The origin for this image is 0,0.
+             new google.maps.Point(0, 0),
+             // The anchor for this image is the base of the flagpole at 0,32.
+             new google.maps.Point(17, 30));
+
+            //var image = 'marker_34x34.png';
+            var myLatLng = new google.maps.LatLng(map7106947_latmarker, map7106947_lngmarker);
+            marker7106947 = new google.maps.Marker({
+                position: myLatLng,
+                map: map7106947,
+                icon: image
+            });
+
+        }
+
+
+
+
+
+
+        function setMapCenter7106947(lat, lng) {
+            var pos = new google.maps.LatLng(lat, lng);
+            map7106947.setCenter(pos);
+            map7106947_latcenter = lat;
+            map7106947_lngcenter = lng;
+
+        }
+
+
+
+
+        function setMapZoom7106947(zoom) {
+            map7106947.setZoom(zoom);
+            map7106947_zoom = zoom;
+
+        }
+
+        function setMarkerPos7106947(lat, lng) {
+            var pos = new google.maps.LatLng(lat, lng);
+            marker7106947.setPosition(pos);
+            map7106947_latmarker = lat;
+            map7106947_lngmarker = lng;
+
+        }
+
+
+
+
+
+
+
+
+
+        $(document).ready(function () {
+
+
+            $("#accordion").accordion({ autoHeight: false }, { collapsible: true, active: false });
+
+
+            //$("#accordion").accordion("activate",0);
+            //$("#accordion").accordion("activate","#accordion10");
+
+            $("#accordion").bind('accordionchange', function (event, ui) {
+                //   ui.newHeader // jQuery object, activated header
+                //   ui.oldHeader // jQuery object, previous header
+                //   ui.newContent // jQuery object, activated content
+                //   ui.oldContent // jQuery object, previous content
+                //console.log(ui);		
+                // console.log($("#accordion").accordion( "option", "active" ));    
+                if ($(ui.newHeader).offset() != null) {
+                    $('html, body').animate({ scrollTop: $(ui.newHeader).offset().top });
+                }
+                bVideoPlaying = 0;
+
+            });
+
+            $("#accordion").bind('accordionchange', function (event, ui) {
+                // ui.newHeader // jQuery object, activated header
+                // ui.oldHeader // jQuery object, previous header
+                // ui.newContent // jQuery object, activated content
+                // ui.oldContent // jQuery object, previous content
+                //  alert($(ui.newContent).attr("id") + " was opened, " + $(ui.oldContent).attr("id") + " was closed");
+                //   console.log(ui.newHeader.attr('id'));
+                if (ui.newContent.attr('id') == 'invite_detail_content7106947' && !map7106947 && $("#invite_detail_mapimgurl7106947").val() == '') {
+                    //alert("initialize7106947");
+                    initialize7106947();
+                }
+
+
+            });
+
+            $("#accordion").bind('accordionchange', function (event, ui) {
+                // ui.newHeader // jQuery object, activated header
+                // ui.oldHeader // jQuery object, previous header
+                // ui.newContent // jQuery object, activated content
+                // ui.oldContent // jQuery object, previous content
+                //  alert($(ui.newContent).attr("id") + " was opened, " + $(ui.oldContent).attr("id") + " was closed");
+                //   console.log(ui.newHeader.attr('id'));
+                if (ui.newContent.attr('id') == 'invite_detail_content7106951' && bInitUploader7106951 == 0) {
+                    //alert("init uploader7106951");
+                    uploader7106951.init();
+                    bInitUploader7106951 = 1;
+                }
+
+
+            });
+
+
+
+
+
+        });
+
+
+
+
+    </script>
+
+
+
+
+    <script type="text/javascript">
+
+        function parseYoutubeVID(url) {
+            //urlBuf = url.toLowerCase();
+            urlBuf = url;
+
+            var youtubeVID = urlBuf.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+            if (youtubeVID != null) {
+                return youtubeVID[1];
+            } else {
+                return "ERR";
+            }
+
+        }
+
+
+
+    </script>
+
+
+    <style type="text/css">
+        body {
+            /*font-family:Georgia, "Times New Roman", Times, serif;*/
+            font-family: Georgia, serif;
+            margin-left: 4px;
+            margin-top: 4px;
+            margin-right: 4px;
+            font-size: 90%;
+        }
+
+
+
+        .ui-widget {
+            /*font-family:Georgia, "Times New Roman", Times, serif;*/
+            font-family: Georgia, serif;
+        }
+
+        .play_video_button {
+            border: solid 1px #CCC; /* 邊框樣式 */
+            -moz-box-shadow: 1px 1px 5px #999; /* Firefox */
+            -webkit-box-shadow: 1px 1px 5px #999; /* Safari 和 Chrome */
+            box-shadow: 1px 1px 5px #999; /* Opera 10.5 + */
+        }
+
+        /*
+.header_style {
+	-webkit-box-shadow: rgba(0,0,0,.3) 1px 1px 2px;
+	margin-bottom: 8px;
+}
+*/
+
+        /*no use now */
+        .title {
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -webkit-box-shadow: rgba(0,0,0,.3) 1px 1px 2px;
+            border: 0px solid #E0E0E0;
+            background-color: #ff87c3; /* Changes the homepage menu background color */
+            text-align: center;
+            padding: 3px 0 3px 0;
+            margin-bottom: 5px;
+            font-size: 120%;
+            color: #999;
+            background: #ff87c3; /* Old browsers */
+            background: -moz-linear-gradient(top, #fcecfc 0%, #fba6e1 50%, #fd89d7 51%, #ff87c3 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcecfc), color-stop(50%,#fba6e1), color-stop(51%,#fd89d7), color-stop(100%,#ff87c3)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff87c3 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff87c3 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff87c3 100%); /* IE10+ */
+            background: linear-gradient(top, #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff87c3 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff87c3',GradientType=0 ); /*IE6-9 */
+        }
+
+        /*jquery UI css overwrite*/
+        .ui-accordion-content, .detail {
+            /*
+	filter: alpha(opacity=10);
+	opacity:0.4;
+*/
+            /*	background-image:url(//cloudfront.youvivid.com/images/index_bg_02.jpg);
+	background-repeat: repeat; 
+	background-position: center center; 
+*/
+            font-family: "微軟正黑體", "微软雅黑", "宋体", "Microsoft JhengHei", "Microsoft YaHei", verdana, tahoma, arial, serif;
+        }
+
+
+        input {
+            height: 20px;
+            font-size: 14px;
+        }
+
+        textarea {
+            font-size: 14px;
+        }
+    </style>
+
+
+
+    <link class="fontcss" href="" rel="stylesheet" type="text/css" />
+
+    <style>
+        * {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+
+    <script>
+
+        // run the currently selected effect
+        function runEffect(controlID, page) {
+            // get effect type from
+            var selectedEffect = "blind";
+
+            // most effect types need no options passed by default
+            var options = {};
+
+
+            //options = { percent: 0 };
+
+            //options = { to: { width: 100%, height: auto } };
+
+
+            // run the effect
+            $("#page-" + controlID + "-" + page).toggle(selectedEffect, options, 500);
+            $("#more-" + controlID + "-" + (page - 1)).toggle("puff", options, 500);
+        };
+
+    </script>
+
+
+
+</head>
+<body>
+
+
+
+
+    <style>
+        /* latin-ext */
+        @font-face {
+            font-family: 'Parisienne';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Parisienne'), local('Parisienne-Regular'), url(css/fonts/1wiHF6pWOa568Cj3p-anxPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+            font-family: 'Parisienne';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Parisienne'), local('Parisienne-Regular'), url(css/fonts/1wiHF6pWOa568Cj3p-anxPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+        }
+
+        #Loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 337px;
+            height: 495px;
+            background: #CCCCCC;
+            margin: 0px 0px 0px 0px;
+            z-index: 1001;
+            -webkit-animation-duration: 2s;
+            -moz-animation-duration: 2s;
+            -ms-animation-duration: 2s;
+            animation-duration: 2s;
+        }
+
+        #loading_bg {
+            width: 337px;
+            height: 495px;
+            background: center center url(css/images/inviteimg/coupleimg.jpg);
+            background-size: cover;
+            margin: auto;
+            z-index: 300;
+            -webkit-animation-duration: 1.6s;
+            -moz-animation-duration: 1.6s;
+            -ms-animation-duration: 1.6s;
+            animation-duration: 1.6s;
+        }
+
+
+
+        #loading_bg2 {
+            width: 100%;
+            height: 100%;
+            background: center center url(css/images/cover/msk.png);
+            margin: 0px 0px 0px 0px;
+            -webkit-animation-duration: 1.6s;
+            -moz-animation-duration: 1.6s;
+            -ms-animation-duration: 1.6s;
+            animation-duration: 1.6s;
+            z-index: 300;
+        }
+
+
+
+
+        #loading_circle_outer {
+            position: absolute;
+            width: 100%;
+            /*height:150px; */
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            font-family: microsoft jhenghei,microsoft yahei,arial;
+            display: table;
+            height: 100%;
+            z-index: 300;
+        }
+
+
+
+        #loading_circle {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+
+
+        #loading_circle_1 {
+            background: center top url(css/images/cover/p1.png) no-repeat;
+            background-size: 180px 42px;
+            height: 55px;
+            width: 100%;
+            -webkit-animation-duration: 1.6s;
+            -moz-animation-duration: 1.6s;
+            -ms-animation-duration: 1.6s;
+            animation-duration: 1.6s;
+        }
+
+        #loading_circle_2 {
+            background: center bottom url(css/images/cover/p2.png) no-repeat;
+            background-size: 255px 15px;
+            height: 15px;
+            width: 100%;
+            -webkit-animation-duration: 0.5s;
+            -moz-animation-duration: 0.5s;
+            -ms-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+        }
+
+        #loading_circle_3 {
+            text-align: center;
+            color: #FFF;
+            font-size: 26px;
+            font-weight: bold;
+            padding: 14px;
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            -ms-animation-duration: 1s;
+            animation-duration: 1s;
+        }
+
+        #loading_circle_4 {
+            background: center bottom url(css/images/cover/p3.png) no-repeat;
+            background-size: 255px 15px;
+            height: 15px;
+            width: 100%;
+            -webkit-animation-duration: 0.5s;
+            -moz-animation-duration: 0.5s;
+            -ms-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+        }
+
+        #loading_circle_5 {
+            text-align: center;
+            color: #CFF;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+            -webkit-animation-duration: 0.6s;
+            -moz-animation-duration: 0.6s;
+            -ms-animation-duration: 0.6s;
+            animation-duration: 0.6s;
+        }
+
+
+        #loading_circle_6 {
+            background: center bottom url(css/images/cover/p4.png) no-repeat;
+            background-size: 150px 8px;
+            height: 8px;
+            width: 100%;
+            -webkit-animation-duration: 1.6s;
+            -moz-animation-duration: 1.6s;
+            -ms-animation-duration: 1.6s;
+            animation-duration: 1.6s;
+        }
+
+        #loading_circle_7 {
+            text-align: center;
+            color: #FFF;
+            font-size: 14px;
+            padding: 3px;
+            -webkit-animation-duration: 1.6s;
+            -moz-animation-duration: 1.6s;
+            -ms-animation-duration: 1.6s;
+            animation-duration: 1.6s;
+        }
+
+        #loading_circle_8 {
+            background: center bottom url(css/images/cover/p5.png) no-repeat;
+            background-size: 180px 40px;
+            height: 50px;
+            width: 100%;
+            margin-top: -20px;
+            -webkit-animation-duration: 1.6s;
+            -moz-animation-duration: 1.6s;
+            -ms-animation-duration: 1.6s;
+            animation-duration: 1.6s;
+        }
+
+
+        .hide-div {
+            /*display:none;*/
+            visibility: hidden;
+        }
+
+        .hide-div-display {
+            display: none;
+        }
+    </style>
+
+    <script language='javascript'>
+
+        $(document).ready(function () {
+
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('#Loading').on('touchstart', function (e) {
+                    //stopLoading();
+                    if (bWinOnLoadFired == 0) {
+                        winOnloadFunc();
+                    }
+                });
+            } else {
+                $('#Loading').on('click', function (e) {
+                    //stopLoading();
+                    if (bWinOnLoadFired == 0) {
+                        winOnloadFunc();
+                    }
+                });
+
+            }
+
+            $('#loading_bg').removeClass('hide-div');
+            $('#loading_bg').addClass('animated fadeIn');
+
+            $('#loading_bg2').removeClass('hide-div');
+            $('#loading_bg2').addClass('animated fadeIn');
+
+            $('#loading_bg2').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                $('#loading_circle_2').removeClass('hide-div');
+                $('#loading_circle_2').addClass('animated fadeInUp');
+                $('#loading_circle_4').removeClass('hide-div');
+                $('#loading_circle_4').addClass('animated fadeInDown');
+            });
+
+
+            $('#loading_circle_2').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                $('#loading_circle_3').removeClass('hide-div');
+                $('#loading_circle_3').addClass('animated zoomIn');
+                $('#loading_circle_1').removeClass('hide-div');
+                $('#loading_circle_1').addClass('animated bounceInDown');
+                $('#loading_circle_6').removeClass('hide-div');
+                $('#loading_circle_6').addClass('animated bounceInUp');
+                $('#loading_circle_7').removeClass('hide-div');
+                $('#loading_circle_7').addClass('animated bounceInUp');
+                $('#loading_circle_8').removeClass('hide-div');
+                $('#loading_circle_8').addClass('animated bounceInUp');
+            });
+
+            $('#loading_circle_1').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                $('#loading_circle_5').removeClass('hide-div');
+                $('#loading_circle_5').addClass('animated lightSpeedIn');
+            });
+
+            $('#loading_circle_5').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                setTimeout(function () {
+                    //alert("bWinOnLoadFired");
+                    if (bWinOnLoadFired == 0) {
+                        winOnloadFunc();
+                    }
+                    // Do something after 20 seconds
+                }, 3000);
+
+            });
+
+
+        });
+
+        function stopLoading() {
+            if ($.browser.msie && parseInt($.browser.version, 10) <= 9) {
+                $("#Loading").fadeOut();
+            } else {
+
+                $("#Loading").addClass('animated fadeOut');
+
+                $('#Loading').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $('#Loading').addClass('hide-div');
+                    $('#Loading').addClass('hide-div-display');
+                });
+            }
+
+
+            //audioPlayer = $("#xaudio")[0];
+
+
+        }
+
+
+        function winOnloadFunc() {
+            bWinOnLoadFired = 1;
+            stopLoading();
+        }
+
+
+        var bWinOnLoadFired = 0;
+
+        $(window).load(function () {
+            if ($.browser.msie && parseInt($.browser.version, 10) <= 9) {
+                if (bWinOnLoadFired == 0) {
+                    winOnloadFunc();
+                }
+            }
+
+        });
+
+        $(function () {
+            setTimeout(function () {
+                //alert("bWinOnLoadFired");
+                if (bWinOnLoadFired == 0) {
+                    winOnloadFunc();
+                }
+                // Do something after 20 seconds
+            }, 30000);
+        });
+    </script>
+
+
+    <!-- <div class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" > -->
+    <div id="Loading">
+        <div id="loading_bg" class="hide-div">
+            <div id="loading_bg2" class="hide-div">
+            </div>
+        </div>
+
+        <div id="loading_circle_outer">
+            <div id="loading_circle">
+                <div id="loading_circle_1" class="hide-div"></div>
+                <div id="loading_circle_2" class="hide-div"></div>
+                <div id="loading_circle_3" class="hide-div">Invite  to attend</div>
+                <div id="loading_circle_4" class="hide-div"></div>
+                <div id="loading_circle_5" class="hide-div">Magesh & Nandhini's Wedding</div>
+                <div id="loading_circle_6" class="hide-div"></div>
+                <div id="loading_circle_7" class="hide-div">April 9th, 2017</div>
+                <div id="loading_circle_8" class="hide-div"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .mon {
+            position: fixed;
+            width: 42px;
+            height: 42px;
+            right: 10px;
+            top: 5px;
+            z-index: 300;
+            background: url(css/images/icons/m_play2.png) no-repeat;
+        }
+
+        .mof {
+            position: fixed;
+            width: 42px;
+            height: 42px;
+            right: 10px;
+            top: 5px;
+            z-index: 300;
+            background: url(css/images/icons/m_stop2.png) no-repeat;
+        }
+
+
+        #preload-19 {
+            background: url(css/images/icons/m_play2.png) no-repeat -9999px -9999px;
+        }
+
+        #preload-20 {
+            background: url(css/images/icons/m_stop2.png) no-repeat -9999px -9999px;
+        }
+    </style>
+    <div id="mbut"></div>
+
+
+    <div id="MainBody">
+        <div id="coverpage"></div>
+        <div id="MainContent">
+
+            <div id="outter">
+                <div class="outter-main-tr">
+                    <div class="outter-main-tl">
+                        <div class="outter-main-tm"></div>
+                    </div>
+                </div>
+                <div class="outter-main-mr">
+                    <div class="outter-main-ml">
+
+                        <div class="ui-widget-header ui-corner-all">
+                            <div id="inner">
+                                <div class="inner-main-tr">
+                                    <div class="inner-main-tl">
+                                        <div class="inner-main-tm">
+                                            <div id="main-title">
+                                                <div class="main-title-tr">
+                                                    <div class="main-title-tl">
+                                                        <div class="main-title-tm">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main-title-mr">
+                                                    <div class="main-title-ml">
+
+                                                        <div class="main-title-mm">
+                                                            <div id="maintitlehtml"><span style="text-decoration: none; font-style: normal; font-size: 18px; font-weight: normal;">Magesh &amp; Nandhini's Wedding</span></div>
+                                                            <div id="maintitle_decoration1"></div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="main-title-br">
+                                                    <div class="main-title-bl">
+                                                        <div class="main-title-bm">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inner-main-mr">
+                                    <div id="img_decoration1"></div>
+                                    <div id="img_decoration2"></div>
+                                    <div id="img_decoration4"></div>
+                                    <div class="inner-main-ml">
+                                        <div id="frame1_1">
+                                            <div id="frame1_2">
+                                                <div id="frame1_3"></div>
+                                            </div>
+                                        </div>
+                                        <div id="frame2_1">
+                                            <div id="frame2_2">
+                                                <div id="frame2_3"></div>
+                                            </div>
+                                        </div>
+                                        <div id="frame3_1">
+                                            <div id="frame3_2">
+                                                <div id="frame3_3"></div>
+                                            </div>
+                                        </div>
+                                        <div class="inner-main-mm">
+                                            <!-- 大圖 -->
+                                            <div id="main_image_container">
+
+                                                <div class="invite_webimg_album" id="invite_webimg_album_mainimage" style="display: none; background: url(css/images/coupleimg.jpg) no-repeat center center; background-size: cover; min-width: 100%; min-height: 100%"></div>
+
+                                                <img id="invite_webimg" src="css/images/coupleimg.jpg" width="100%" alt="Mobile Wedding Invitations">
+                                            </div>
+
+                                            <div id="img_videobutton_placeholder" style="position: relative;">
+                                                <div id="img_videobutton" style="display: none;"></div>
+                                            </div>
+
+                                            <style type="text/css">
+                                                #main_image_container {
+                                                    position: relative;
+                                                    overflow: hidden;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                }
+
+                                                .invite_webimg_album {
+                                                    float: left;
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    transform: scale(1.2,1.2);
+                                                    -webkit-transform: scale(1.2,1.2);
+                                                }
+                                                /*.invite_webimg_album:last-child{display: block; -webkit-transform: scale(1.2,1.2);}*/
+
+                                                .auto {
+                                                    animation: imgScale 4s ease-out;
+                                                    -webkit-animation: imgScale 4s ease-out;
+                                                }
+
+                                                @keyframes imgScale {
+                                                    0% {
+                                                        transform: scale(1,1);
+                                                    }
+
+                                                    100% {
+                                                        transform: scale(1.2,1.2);
+                                                    }
+                                                }
+
+
+                                                @-webkit-keyframes imgScale {
+                                                    0% {
+                                                        -webkit-transform: scale(1,1);
+                                                    }
+
+                                                    100% {
+                                                        -webkit-transform: scale(1.2,1.2);
+                                                    }
+                                                }
+                                            </style>
+
+                                            <script type="text/javascript">
+
+                                                $(function () {
+                                                    /*	
+                                                        $('#invite_webimg').on('load', function () {
+                                                            $("#main_image_container").width($(this).width()).height($(this).height());
+                                                            //alert('#invite_webimg onload, w=' + $(this).width() + ', h=' + $(this).height() );
+                                                        }).each(function() {
+                                                            if(this.complete) $(this).load();
+                                                        });	
+                                                        
+                                                        
+                                                    */
+
+                                                });
+
+
+                                                var now_img = 0, img_count = 0;
+                                                var slideshowTimer
+
+                                                function setSlideshow() {
+
+                                                    //alert('#invite_webimg , w=' + $('#invite_webimg').width() + ', h=' + $('#invite_webimg').height() );
+
+                                                    //$("#main_image_container").width($('#invite_webimg').width()).height($('#invite_webimg').height());
+                                                    if (slideshowTimer) {
+                                                        clearInterval(slideshowTimer);
+                                                    }
+                                                    img_count = $('.invite_webimg_album').length;
+                                                    if (img_count > 1) {
+
+                                                        now_img = img_count - 1;
+                                                        slideshowTimer = setInterval(function () {
+                                                            if (now_img == 0) {
+                                                                next_img = img_count - 1;
+                                                            } else {
+                                                                next_img = now_img - 1;
+                                                            }
+                                                            $(".invite_webimg_album").eq(next_img).fadeIn(1000).addClass('auto');
+                                                            $(".invite_webimg_album").eq(now_img).fadeOut(2000).removeClass('auto');
+
+                                                            now_img = next_img;
+                                                        }, 5000);
+                                                    } else {
+
+
+                                                    }
+
+                                                }
+
+
+                                                function addSlideshowItem(fileurl) {
+
+
+                                                    $("#main_image_container").prepend("<div class='invite_webimg_album' style='background:url(" + fileurl + ") no-repeat center center; background-size: cover; min-width:100%; min-height:100%' ></div>");
+
+                                                }
+                                            </script>
+
+
+
+                                            <script>
+
+                                                var startX, startY
+
+                                                // detect if touch event supported or not
+                                                if ('ontouchstart' in document.documentElement) {
+                                                    document.getElementById("invite_webimg").addEventListener("touchmove", handleMove, false);
+                                                    document.getElementById("invite_webimg").addEventListener("touchend", handleEnd, false);
+                                                    document.getElementById("invite_webimg").addEventListener("touchstart", handleStart, false);
+                                                }
+
+                                                function handleStart(event) {
+                                                    //event.preventDefault();
+                                                    var touch = event.touches[0];
+                                                    startX = parseInt(touch.pageX);
+                                                    startY = parseInt(touch.pageY);
+
+                                                    //alert(startX + ' ' + startY);
+                                                }
+
+                                                function handleEnd(event) {
+
+
+
+                                                }
+
+                                                function handleMove(event) {
+
+                                                    //event.preventDefault();          
+                                                    var x, y;
+
+
+                                                    var touch = event.touches[0];
+                                                    x = parseInt(touch.pageX) - startX;
+                                                    y = parseInt(touch.pageY) - startY;
+
+                                                    if ($("#Gallery0 li").size() > 0) {
+
+                                                        if ((Math.abs(x) > Math.abs(y)) && (Math.abs(x) > 150)) {
+
+                                                            instance0.show(0);
+                                                        }
+                                                    }
+
+                                                }
+
+                                                // default mv parameter 
+                                                var invite_mediatype = 0;
+                                                var invite_preview_objurl;
+                                                var invite_preview_usrdata;
+
+
+
+                                                /*	
+                                                    $(document).ready(function() {
+                                                            //init
+                                                            if (invite_mediatype == 1) {
+                                                                $( "#img_videobutton").show();
+                                                                $( "#img_videobutton_placeholder").show();
+                                                            } else {
+                                                                $( "#img_videobutton").hide();
+                                                                $( "#img_videobutton_placeholder").hide();
+                                                            }
+                                                
+                                                    });
+                                                */
+
+
+                                                $(function () {
+                                                    //if (invite_mediatype == 1) {
+                                                    //	$( "#img_decoration1,#img_decoration2,#img_decoration3").css('cursor', 'pointer');	
+                                                    //} else {
+                                                    //	$( "#img_decoration1,#img_decoration2,#img_decoration3").css('cursor', 'default');	
+                                                    //}
+
+
+
+
+
+                                                    $("#img_videobutton").click(function () {
+                                                        //alert("playVideo");
+                                                        if (invite_mediatype == 1) {
+
+                                                            self.parent.switchSrc_variable4(invite_preview_objurl, invite_preview_usrdata);
+
+                                                        }
+
+
+                                                        return false;
+                                                    });
+
+
+                                                    if ($("#Gallery0 li").size() > 0) {
+
+                                                        $("#invite_webimg,#img_decoration1,#img_decoration2,#img_decoration3,#frame1_1,#frame1_2,#frame1_3,#frame2_1,#frame2_2,#frame2_3,#frame3_1,#frame3_2,#frame3_3").css('cursor', 'pointer');
+                                                    } else {
+                                                        $("#invite_webimg,#img_decoration1,#img_decoration2,#img_decoration3,#frame1_1,#frame1_2,#frame1_3,#frame2_1,#frame2_2,#frame2_3,#frame3_1,#frame3_2,#frame3_3").css('cursor', 'default');
+                                                    }
+
+                                                    $("#invite_webimg,#img_decoration1,#img_decoration2,#img_decoration3,#frame1_1,#frame1_2,#frame1_3,#frame2_1,#frame2_2,#frame2_3,#frame3_1,#frame3_2,#frame3_3").click(function () {
+
+
+                                                        if ($("#Gallery0 li").size() > 0) {
+
+                                                            //alert($("#Gallery a:first").html());
+                                                            //$("#Gallery a:first").click();
+                                                            instance0.show(0);
+                                                        }
+
+
+                                                        return false;
+                                                    });
+
+
+
+                                                });
+
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inner-main-br">
+                                    <div id="img_decoration3"></div>
+                                    <div class="inner-main-bl">
+                                        <div class="inner-main-bm">
+
+                                            <div id="sub-title">
+                                                <div class="sub-title-tr">
+                                                    <div class="sub-title-tl">
+                                                        <div class="sub-title-tm">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-title-mr">
+                                                    <div class="sub-title-ml">
+
+                                                        <div class="sub-title-mm">
+                                                            <div id="subtitlehtml"><span style="font-weight: normal; font-size: 16px;">April 9th, 2017</span></div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="sub-title-br">
+                                                    <div class="sub-title-bl">
+                                                        <div class="sub-title-bm">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="outter-main-br">
+                    <div class="outter-main-bl">
+                        <div class="outter-main-bm"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- preload placeholder for custom.css assets-->
+            <div id="preload-01"></div>
+            <div id="preload-02"></div>
+            <div id="preload-03"></div>
+            <div id="preload-04"></div>
+            <div id="preload-05"></div>
+            <div id="preload-06"></div>
+            <div id="preload-07"></div>
+            <div id="preload-08"></div>
+            <div id="preload-09"></div>
+            <div id="preload-10"></div>
+            <div id="preload-11"></div>
+            <div id="preload-12"></div>
+            <div id="preload-13"></div>
+            <div id="preload-14"></div>
+            <div id="preload-15"></div>
+            <div id="preload-16"></div>
+            <div id="preload-17"></div>
+            <div id="preload-18"></div>
+            <div id="preload-19"></div>
+            <div id="preload-20"></div>
+
+
+            <div id="accordion">
+
+
+
+
+                <h3 class="detail-compact" style="display: " id="invite_detail_title7106945">
+
+                    <div name="button1" id="button1" class="button">
+                        <div class="button-tr">
+                            <div class="button-tl">
+                                <div class="button-tm"></div>
+                            </div>
+                        </div>
+                        <div class="button-mr">
+                            <div class="button-ml">
+                                <div class="button-mm">
+                                    <a href="javaScript:void(0);">
+                                        <img class="iconimage" alt="1.png" src="css/images/icons/1.png" border="0" align="absmiddle">&nbsp;<span id="invite_detail_name7106945" class="button-title">Invitation</span>&nbsp;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-br">
+                            <div class="button-bl">
+                                <div class="button-bm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </h3>
+
+                <div class="accordion" id="invite_detail_content7106945">
+
+                    <div name="detail1" id="detail1" class="detail">
+                        <div class="detail-tr">
+                            <div class="detail-tl">
+                                <div class="detail-tm"></div>
+                            </div>
+                        </div>
+                        <div class="detail-mr">
+                            <div class="detail-ml">
+                                <div class="detail-mm">
+
+
+                                    <div class="invite_detail_editor" id="invite_detail_editor7106945">
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">Nandhini and Magesh</span></span></div>
+
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">request the pleasure of your company</span></span></div>
+
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">at the celebration of their marriage</span></span></div>
+
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">on Sunday, April 9, 2017</span></span></div>
+
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">at 7.30 AM to 9.00 AM</span></span></div>
+
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">YWCA Hall</span></span></div>
+
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">Ooty, Tamil Nadu</span></span></div>
+
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">Reception to follow</span></span></div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="detail-br">
+                            <div class="detail-bl">
+                                <div class="detail-bm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h3 class="detail-compact" style="display: " id="invite_detail_title7106947">
+
+                    <div name="button4" id="button4" class="button">
+                        <div class="button-tr">
+                            <div class="button-tl">
+                                <div class="button-tm"></div>
+                            </div>
+                        </div>
+                        <div class="button-mr">
+                            <div class="button-ml">
+                                <div class="button-mm">
+                                    <a href="javaScript:void(0);">
+                                        <img class="iconimage" alt="4.png" src="css/images/icons/4.png" border="0" align="absmiddle">&nbsp;<span id="invite_detail_name7106947" class="button-title">Directions</span>&nbsp;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-br">
+                            <div class="button-bl">
+                                <div class="button-bm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </h3>
+
+                <div class="accordion" id="invite_detail_content7106947">
+
+                    <div name="detail4" id="detail4" class="detail">
+                        <div class="detail-tr">
+                            <div class="detail-tl">
+                                <div class="detail-tm"></div>
+                            </div>
+                        </div>
+                        <div class="detail-mr">
+                            <div class="detail-ml">
+                                <div class="detail-mm">
+
+                                    <iframe width="100%" frameborder="0" scrolling="no" marginheight="0"
+                                        marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62575.05116159176!2d76.65840188706859!3d11.411850524327159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bd84b5f3d78d%3A0x179bdb14c93e3f42!2sOoty%2C+Tamil+Nadu%2C+India!5e0!3m2!1sen!2s!4v1488111049368"></iframe>
+                                    <br />
+                                    <small><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62575.05116159176!2d76.65840188706859!3d11.411850524327159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bd84b5f3d78d%3A0x179bdb14c93e3f42!2sOoty%2C+Tamil+Nadu%2C+India!5e0!3m2!1sen!2s!4v1488111049368"
+                                        style="color: #0000FF; text-align: left">View Larger Map</a></small>
+
+
+                                    <div id="map_desc7106947">
+                                        YWCA Hall<br>
+                                        near Muruan temple, Ooty, Tamil Nadu<br>
+                                        +91 9894483386
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="detail-br">
+                            <div class="detail-bl">
+                                <div class="detail-bm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h3 class="detail-compact" style="display: " id="invite_detail_title7106949">
+
+                    <div name="button5" id="button5" class="button">
+                        <div class="button-tr">
+                            <div class="button-tl">
+                                <div class="button-tm"></div>
+                            </div>
+                        </div>
+                        <div class="button-mr">
+                            <div class="button-ml">
+                                <div class="button-mm">
+                                    <a href="javaScript:void(0);">
+                                        <img class="iconimage" alt="5.png" src="css/images/icons/5.png" border="0" align="absmiddle">&nbsp;<span id="invite_detail_name7106949" class="button-title">Share</span>&nbsp;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-br">
+                            <div class="button-bl">
+                                <div class="button-bm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </h3>
+
+                <div class="accordion" id="invite_detail_content7106949">
+
+                    <div name="detail5" id="detail5" class="detail">
+                        <div class="detail-tr">
+                            <div class="detail-tl">
+                                <div class="detail-tm"></div>
+                            </div>
+                        </div>
+                        <div class="detail-mr">
+                            <div class="detail-ml">
+                                <div class="detail-mm">
+
+                                    <div style="font-size: 14px; margin-bottom: 15px; -webkit-user-select: none;">Share :</div>
+
+                                    <a href="whatsapp://send?text=http://webdevelopmentscripts.com">
+                                        <img src="css/images/icons/watsup.png" alt="Favorite icon" /></a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="detail-br">
+                            <div class="detail-bl">
+                                <div class="detail-bm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="accordion_bottom"></div>
+
+            </div>
+
+
+
+
+
+
+            <!--<div id="PhotoSwipeTarget"></div>-->
+
+            <div id="footer">
+                <div id="copyright">
+                    <div id="copyright-text">
+                        <div id="copyright-text-content">
+                            " Thank you! "
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="music">
+        <audio autoplay>
+            <source src="bgm.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+
+
+</body>
+
+</html>
