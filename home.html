@@ -2,12 +2,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta property="og:image" content="https://youvivid-jp-s3-uploads7cdn.youvivid.com/invite_cimage/b669714-665CD9E979EEFD1C6E75008FB6865CCACNVT49050.104.jpg" />
+    <meta property="og:image" content="https://myweddinginvite.herokuapp.com/css/images/inviteimg/coupleimg.jpg" />
     <meta property="og:image:type" content="image/jpeg">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <meta name="viewport" content="width=320, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
-    <title>Magesh &amp; Nandhini's Wedding</title>
+    <title>Nandhini &amp; Magesh's Wedding</title>
     <meta name="description" content="2017/04/09 undefined undefined, Nandhini&amp;Magesh" />
 
 
@@ -51,7 +51,7 @@
     <link class="customcss" href="css/custom4.css" rel="stylesheet" type="text/css" />
     <link class="themecss" href="css/custom2.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/animate.min.css">
-
+	<link rel="stylesheet" href="css/fonts/customfonts.css">
 
     <script type="text/javascript">
 
@@ -157,7 +157,7 @@
             map7106947 = new google.maps.Map(document.getElementById("map_canvas7106947"),
                                           myOptions);
 
-            var image = new google.maps.MarkerImage('//cloudfront.youvivid.com/images/mobile_invite/map_marker.png',
+            var image = new google.maps.MarkerImage('images/mobile_invite/map_marker.png',
              // This marker is 20 pixels wide by 32 pixels tall.
              new google.maps.Size(34, 34),
              // The origin for this image is 0,0.
@@ -273,6 +273,37 @@
 
         });
 
+var bVideoPlaying = 0;
+
+
+
+
+var bMute = 0;
+
+
+
+//var audioPlayer; //initialize in $(window).load(function()
+
+
+function setMusic(mp3Url) {
+
+	
+	if (mp3Url.indexOf("musicnotfound.mp3") >= 0) {
+		bMute = 1;
+	} else {
+		bMute = 0;
+	}
+	//alert(mp3Url);
+	
+	$("#jquery_jplayer_1").jPlayer("pause");
+	 
+	$("#jquery_jplayer_1").jPlayer("setMedia", {
+		mp3:  mp3Url
+	}).jPlayer("play");		
+}
+
+
+
 
 
 
@@ -304,7 +335,7 @@
     <style type="text/css">
         body {
             /*font-family:Georgia, "Times New Roman", Times, serif;*/
-            font-family: Georgia, serif;
+           font-family:'Dancing Script', cursive;
             margin-left: 4px;
             margin-top: 4px;
             margin-right: 4px;
@@ -315,7 +346,7 @@
 
         .ui-widget {
             /*font-family:Georgia, "Times New Roman", Times, serif;*/
-            font-family: Georgia, serif;
+            font-family:'Dancing Script', cursive;
         }
 
         .play_video_button {
@@ -360,7 +391,7 @@
 	filter: alpha(opacity=10);
 	opacity:0.4;
 */
-            /*	background-image:url(//cloudfront.youvivid.com/images/index_bg_02.jpg);
+            /*
 	background-repeat: repeat; 
 	background-position: center center; 
 */
@@ -420,22 +451,6 @@
 
 
     <style>
-        /* latin-ext */
-        @font-face {
-            font-family: 'Parisienne';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Parisienne'), local('Parisienne-Regular'), url(css/fonts/1wiHF6pWOa568Cj3p-anxPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-        }
-        /* latin */
-        @font-face {
-            font-family: 'Parisienne';
-            font-style: normal;
-            font-weight: 400;
-            src: local('Parisienne'), local('Parisienne-Regular'), url(css/fonts/1wiHF6pWOa568Cj3p-anxPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-        }
 
         #Loading {
             position: fixed;
@@ -491,7 +506,7 @@
             left: 0;
             right: 0;
             margin: 0 auto;
-            font-family: microsoft jhenghei,microsoft yahei,arial;
+            font-family:microsoft jhenghei,microsoft yahei,arial;
             display: table;
             height: 100%;
             z-index: 300;
@@ -739,7 +754,7 @@
                 <div id="loading_circle_2" class="hide-div"></div>
                 <div id="loading_circle_3" class="hide-div">Invite  to attend</div>
                 <div id="loading_circle_4" class="hide-div"></div>
-                <div id="loading_circle_5" class="hide-div">Magesh & Nandhini's Wedding</div>
+                <div id="loading_circle_5" class="hide-div">Nandhini & Magesh's Wedding</div>
                 <div id="loading_circle_6" class="hide-div"></div>
                 <div id="loading_circle_7" class="hide-div">April 9th, 2017</div>
                 <div id="loading_circle_8" class="hide-div"></div>
@@ -747,6 +762,92 @@
             </div>
         </div>
     </div>
+<script language="javascript" type="text/javascript">
+
+$(document).ready(function() {
+/*	
+	if (window.self != window.top) {
+		$(document.body).addClass("in-iframe");
+	}
+*/	
+	function mon() {
+		$("#jquery_jplayer_1").jPlayer("play");
+		//alert('func mon');
+	}
+
+	function mof() {
+		$("#jquery_jplayer_1").jPlayer("pause");
+		//alert('func mof');
+	}
+
+
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function() {
+          $(this).jPlayer("setMedia", {
+            mp3: "bgm.mp3"
+          }).jPlayer("play");
+          var click = document.ontouchstart === undefined ? 'click' : 'touchstart';
+          var kickoff = function () {
+			if (bVideoPlaying==1) {
+				$("#jquery_jplayer_1").jPlayer("pause");
+			} else {
+				$("#jquery_jplayer_1").jPlayer("play");
+				//alert('play');
+			}
+			//alert('kickoff');
+				
+				$("#MainBody,#Loading").off( "click", kickoff );
+				
+
+          };
+		  	
+			$("#MainBody,#Loading").on( "click", kickoff );
+ 		  	
+		  
+		  $("#jquery_jplayer_1").bind($.jPlayer.event.play, function(event) {
+			  if (bMute==0) {
+				  $("#mbut").removeClass('mof');
+				  $("#mbut").removeClass('mon');
+				  $("#mbut").addClass('mon');
+				  $("#mbut").off( "click", mof );
+				  $("#mbut").off( "click", mon );
+				  $("#mbut").on( "click", mof );
+			  } else {
+				  $("#mbut").removeClass('mof');
+				  $("#mbut").removeClass('mon');
+				  $("#mbut").off( "click", mof );
+				  $("#mbut").off( "click", mon );
+			  }
+			  //alert('event play, bmute = ' + bMute);
+			   
+		  });
+		  $("#jquery_jplayer_1").bind($.jPlayer.event.pause, function(event) {
+			  if (bMute==0) {
+				  $("#mbut").removeClass('mof');
+				  $("#mbut").removeClass('mon');
+				  $("#mbut").addClass('mof');
+				  $("#mbut").off( "click", mof );
+				  $("#mbut").off( "click", mon );
+				  $("#mbut").on( "click", mon );
+			  } else {
+				  $("#mbut").removeClass('mof');
+				  $("#mbut").removeClass('mon');
+				  $("#mbut").off( "click", mof );
+				  $("#mbut").off( "click", mon );
+			  }
+			  //alert('event pause');
+			   
+		  });
+		  
+		  
+        },
+        swfPath: "/js",
+        loop: false
+      });
+});
+
+</script>
+
 
     <style>
         .mon {
@@ -810,7 +911,7 @@
                                                     <div class="main-title-ml">
 
                                                         <div class="main-title-mm">
-                                                            <div id="maintitlehtml"><span style="text-decoration: none; font-style: normal; font-size: 18px; font-weight: normal;">Magesh &amp; Nandhini's Wedding</span></div>
+                                                            <div id="maintitlehtml"><span style="text-decoration: none; font-style: normal; font-size: 18px; font-weight: normal;">Nandhini &amp; Magesh's Wedding</span></div>
                                                             <div id="maintitle_decoration1"></div>
                                                         </div>
 
@@ -1198,21 +1299,21 @@
 
 
                                     <div class="invite_detail_editor" id="invite_detail_editor7106945">
-                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">Nandhini and Magesh</span></span></div>
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family:dancing script,cursive;">Nandhini and Magesh</span></span></div>
 
-                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">request the pleasure of your company</span></span></div>
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: dancing script,cursive;">request the pleasure of your company</span></span></div>
 
-                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">at the celebration of their marriage</span></span></div>
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: dancing script,cursive;">at the celebration of their marriage</span></span></div>
 
-                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">on Sunday, April 9, 2017</span></span></div>
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: dancing script,cursive;">on Sunday, April 9, 2017</span></span></div>
 
-                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">at 7.30 AM to 9.00 AM</span></span></div>
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: dancing script,cursive;">at 7.30 AM to 9.00 AM</span></span></div>
 
-                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">YWCA Hall</span></span></div>
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: dancing script,cursive;">YWCA Hall</span></span></div>
 
-                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">Ooty, Tamil Nadu</span></span></div>
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: dancing script,cursive;">Ooty, Tamil Nadu</span></span></div>
 
-                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: parisienne,cursive;">Reception to follow</span></span></div>
+                                        <div style="text-align: center;"><span style="font-size: 20px;"><span style="font-family: dancing script,cursive;">Reception to follow</span></span></div>
 
                                     </div>
 
@@ -1267,11 +1368,8 @@
                                 <div class="detail-mm">
 
                                     <iframe width="100%" frameborder="0" scrolling="no" marginheight="0"
-                                        marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62575.05116159176!2d76.65840188706859!3d11.411850524327159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bd84b5f3d78d%3A0x179bdb14c93e3f42!2sOoty%2C+Tamil+Nadu%2C+India!5e0!3m2!1sen!2s!4v1488111049368"></iframe>
+                                        marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7822.0380287919725!2d76.70032657253876!3d11.406164967584147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bd89bfc520bb%3A0x95d67fcbe3bd5773!2sYWCA+Anandagiri+Holiday+Home!5e0!3m2!1sen!2sus!4v1488255082283"></iframe>
                                     <br />
-                                    <small><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62575.05116159176!2d76.65840188706859!3d11.411850524327159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bd84b5f3d78d%3A0x179bdb14c93e3f42!2sOoty%2C+Tamil+Nadu%2C+India!5e0!3m2!1sen!2s!4v1488111049368"
-                                        style="color: #0000FF; text-align: left">View Larger Map</a></small>
-
 
                                     <div id="map_desc7106947">
                                         YWCA Hall<br>
@@ -1328,9 +1426,9 @@
                             <div class="detail-ml">
                                 <div class="detail-mm">
 
-                                    <div style="font-size: 14px; margin-bottom: 15px; -webkit-user-select: none;">Share :</div>
+                                    <div style="font-size: 14px; margin-bottom: 15px; -webkit-user-select: none;">Share URL :</div>
 
-                                    <a href="whatsapp://send?text=http://webdevelopmentscripts.com">
+                                    <a href="whatsapp://send?text= Magesh & Nandhini's Wedding: https://myweddinginvite.herokuapp.com/css/images/inviteimg/coupleimg.jpg">
                                         <img src="css/images/icons/watsup.png" alt="Favorite icon" /></a>
                                 </div>
 
@@ -1361,7 +1459,7 @@
                 <div id="copyright">
                     <div id="copyright-text">
                         <div id="copyright-text-content">
-                            " Thank you! "
+                            Your presence will be highly appreciated
                         </div>
                     </div>
                 </div>
@@ -1370,12 +1468,8 @@
         </div>
     </div>
 
-    <div id="music">
-        <audio autoplay>
-            <source src="bgm.mp3" type="audio/mpeg">
-        </audio>
-    </div>
 
+<div id="jquery_jplayer_1" style=" width:1px; height:1px"></div>
 
 
 </body>
