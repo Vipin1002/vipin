@@ -453,22 +453,25 @@ function setMusic(mp3Url) {
     <style>
 
         #Loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 337px;
-            height: 495px;
-            background: #CCCCCC;
-            margin: 0px 0px 0px 0px;
-            z-index: 1001;
-            -webkit-animation-duration: 2s;
-            -moz-animation-duration: 2s;
-            -ms-animation-duration: 2s;
-            animation-duration: 2s;
-        }
+			position: absolute;
+			top: -145px;
+			left: 0;
+			right: 0;
+			width: 303px;
+			height: 495px;
+			background: #CCCCCC;
+			margin: 0px 0px 0px 0px;
+			z-index: 1001;
+			-webkit-animation-duration: 2s;
+			-moz-animation-duration: 2s;
+			-ms-animation-duration: 2s;
+			animation-duration: 2s;
+			bottom: 0;
+			margin: auto;
+		}
 
         #loading_bg {
-            width: 337px;
+            width: 303px;
             height: 495px;
             background: center center url(css/images/inviteimg/coupleimg.jpg);
             background-size: cover;
@@ -851,24 +854,28 @@ $(document).ready(function() {
 
     <style>
         .mon {
-            position: fixed;
+            position: absolute;
             width: 42px;
             height: 42px;
-            right: 10px;
-            top: 5px;
+            right: 0px;
+			left: 260px;
+            top: 19px;
             z-index: 300;
+			margin: auto;
             background: url(css/images/icons/m_play2.png) no-repeat;
         }
 
         .mof {
-            position: fixed;
-            width: 42px;
-            height: 42px;
-            right: 10px;
-            top: 5px;
-            z-index: 300;
-            background: url(css/images/icons/m_stop2.png) no-repeat;
-        }
+			position: absolute;
+			width: 42px;
+			height: 42px;
+			right: 0px;
+			left: 260px;
+			top: 20px;
+			z-index: 300;
+			margin: auto;
+			background: url(css/images/icons/m_stop2.png) no-repeat;
+		}
 
 
         #preload-19 {
